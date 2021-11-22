@@ -3,8 +3,8 @@ nomeAula=templateMethod
 
 all: $(nomeAula)
 
-$(nomeAula): main.o Dado.o DadosEstatisticos.o ExtrairEstatisticasCSV.hpp
-	g++ -o $(nomeAula) main.o Dado.o DadosEstatisticos.o ExtrairEstatisticasCSV.hpp $(parametrosCompilacao)
+$(nomeAula): main.o Dado.o DadosEstatisticos.o ExtrairEstatisticasCSV.hpp ExtrairEstatisticasJSON.hpp
+	g++ -o $(nomeAula) main.o Dado.o DadosEstatisticos.o ExtrairEstatisticasCSV.hpp ExtrairEstatisticasJSON.hpp $(parametrosCompilacao)
 
 main.o: main.cpp
 	g++ -c main.cpp $(parametrosCompilacao)

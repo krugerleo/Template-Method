@@ -1,5 +1,6 @@
 #include <iostream>
 #include "ExtrairEstatisticasCSV.hpp"
+#include "ExtrairEstatisticasJSON.hpp"
 #include "DadosEstatisticos.hpp"
 
 int main() {
