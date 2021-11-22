@@ -3,20 +3,17 @@
 
 #include <string>
 #include <vector>
-#include <vector>
+#include <fstream>
 #include "bibliotecas/csv.hpp"
 #include "Dado.hpp"
 #include "ExtrairEstatisticas.hpp"
 
 class ExtrairEstatisticasCSV: public ExtrairEstatisticas {
     protected:
-        std::vector<Dado*> converterParaClasseDado(const std::string& nomeArq) const override {
+        std::vector<Dado*> converterParaClasseDado(std::ifstream& arq) const override {
             std::vector<Dado*> dados;
 
-            csv::CSVFormat format;
-            format.header_row(0);
-
-            csv::CSVReader reader(nomeArq, format);
+            csv::CSVReader reader(arq);
             csv::CSVRow row;
 
             while (reader.read_row(row)) {
@@ -30,10 +27,6 @@ class ExtrairEstatisticasCSV: public ExtrairEstatisticas {
             }
 
             return dados;
-        }
-
-        bool checarFormatoSuportado(const std::string& nomeArq) const override {
-            return nomeArq.substr(nomeArq.find_last_of(".") + 1) == "csv";
         }
 };
 

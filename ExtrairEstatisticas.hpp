@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include <fstream>
 #include "Dado.hpp"
 #include "DadosEstatisticos.hpp"
 #include <stdexcept>
@@ -10,23 +11,35 @@
 class ExtrairEstatisticas {
     public:
         DadosEstatisticos* obterDadosEstatisticos(const std::string& nomeArq) {
-            if (!this->checarFormatoSuportado(nomeArq)) {
-                throw std::invalid_argument{"Formato não suportado."};
+            if (!this->checarArquivo(nomeArq)) {
+                throw std::runtime_error{"Arquivo não passou na checagem"};
             }
 
-            std::vector<Dado*> dados{this->converterParaClasseDado(nomeArq)};
+            std::ifstream arq{this->abrirArquivo(nomeArq)};
+
+            std::vector<Dado*> dados{this->converterParaClasseDado(arq)};
 
             DadosEstatisticos* dadosEstatisticos{this->processarDados(dados)};
+
+            this->fecharArquivo(arq);
+
+            this->limparDados(dados);
 
             return dadosEstatisticos;
         }
 
     protected:
-        virtual bool checarFormatoSuportado(const std::string& nomeArq) const = 0;
+        virtual bool checarArquivo(const std::string& nomeArq) const { return true; }
 
-        virtual std::vector<Dado*> converterParaClasseDado(const std::string& nomeArq) const = 0;
+        virtual std::ifstream abrirArquivo(const std::string& nomeArq) const {
+            std::ifstream arq(nomeArq);
 
-        DadosEstatisticos* processarDados(const std::vector<Dado*>& dados) {
+            return arq;
+        }
+
+        virtual std::vector<Dado*> converterParaClasseDado(std::ifstream& arq) const = 0;
+
+        DadosEstatisticos* processarDados(const std::vector<Dado*>& dados) const {
             float somaIdade{0.0};
             float somaAltura{0.0};
             float somaPeso{0.0};
@@ -58,6 +71,17 @@ class ExtrairEstatisticas {
                     )};
 
             return dadosEstatisticos;
+        }
+
+        virtual void fecharArquivo(std::ifstream& arq) const {
+            arq.close();
+        }
+
+        virtual void limparDados(std::vector<Dado*>& dados) const {
+            std::vector<Dado*>::const_iterator it{dados.begin()};
+
+            for(; it != dados.end(); it++)
+                delete (*it);
         }
 };
 
