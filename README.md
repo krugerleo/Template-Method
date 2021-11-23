@@ -3,6 +3,13 @@
 ### 1.1 O que é?
 Template Method é um padrão para design de projeto onde utiliza-se de um Classe como esqueleto de operações e deixa os detalhes para serem implementados pelas Classes filhas. E a estrutura geral e a sequência das operações são preservadas pela Classe pai.
 ### 1.3 Estrutura
+A classe abstrata declara operações que serão as etapas necessarias para execução. As operações podem ser Abstratas ou ter codigo padrão utilizado em todas as Classes filho.
+
+As Classes concretas podem sobreescrever as etapas, porém o metodo é preservado.
+
+A etapa três (hook) pode ser necessaria em caso de outras Classes filho que precisem de outra operação sobreescrita.
+
+![Diagrama estrutura do Template Method](/diagrama/Estrutura.jpg)
 
 ### 1.3 Exemplificando
 Para um algoritmo de ordenação ascendente e decrescente é muito similar,
