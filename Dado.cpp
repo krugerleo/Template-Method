@@ -2,7 +2,7 @@
 
 Dado::Dado(
     const std::string& nome,
-    const float idade,
+    const int idade,
     const float altura,
     const float peso,
     const char sexo
@@ -14,7 +14,7 @@ std::string Dado::getNome() const {
     return this->nome;
 }
 
-float Dado::getIdade() const {
+int Dado::getIdade() const {
     return this->idade;
 }
 

@@ -28,7 +28,7 @@ float DadosEstatisticos::getMediaAltura() const{
     return this->mediaAltura;
 }
 
-float DadosEstatisticos::getMediaPesoa() const{
+float DadosEstatisticos::getMediaPeso() const{
     return this->mediaPeso;
 }
 

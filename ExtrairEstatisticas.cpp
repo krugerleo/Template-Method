@@ -1,4 +1,5 @@
 #include "ExtrairEstatisticas.hpp"
+#include "bibliotecas/json.hpp"
 #include <stdexcept>
 
 DadosEstatisticos* ExtrairEstatisticas::obterDadosEstatisticos(const std::string& nomeArq) const {

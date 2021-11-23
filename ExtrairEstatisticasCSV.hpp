@@ -3,7 +3,6 @@
 
 #include <vector>
 #include <fstream>
-#include "bibliotecas/csv.hpp"
 #include "Dado.hpp"
 #include "ExtrairEstatisticas.hpp"
 

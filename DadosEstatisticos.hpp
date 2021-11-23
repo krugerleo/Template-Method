@@ -15,7 +15,7 @@ class DadosEstatisticos {
         float getNumTotalDados() const;
         float getMediaIdade() const;
         float getMediaAltura() const;
-        float getMediaPesoa() const;
+        float getMediaPeso() const;
         float getPorcentagemSexoM() const;
         float getPorcentagemSexoF() const;
 

@@ -4,7 +4,6 @@
 #include <string>
 #include <fstream>
 #include <vector>
-#include "bibliotecas/json.hpp"
 #include "Dado.hpp"
 #include "ExtrairEstatisticas.hpp"
 
