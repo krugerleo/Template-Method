@@ -13,7 +13,7 @@ void LeitorDadosEstatisticosArq::imprimirDadosEstatisticos(const std::string nom
         << "Media Altura = " << de->getMediaAltura() << std::endl
         << "Media Peso = " << de->getMediaPeso() << std::endl
         << "Porcentagem Sexo M = " << de->getPorcentagemSexoM() << std::endl
-        << "Porncetagem Sexo F = " << de->getPorcentagemSexoF() << std::endl
+        << "Porcentagem Sexo F = " << de->getPorcentagemSexoF() << std::endl
         << std::endl;
 
     delete de;

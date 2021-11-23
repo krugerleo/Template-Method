@@ -16,7 +16,7 @@ int main() {
         << "Media Altura = " << deCSV->getMediaAltura() << std::endl
         << "Media Peso = " << deCSV->getMediaPeso() << std::endl
         << "Porcentagem Sexo M = " << deCSV->getPorcentagemSexoM() << std::endl
-        << "Porncetagem Sexo F = " << deCSV->getPorcentagemSexoF() << std::endl
+        << "Porcentagem Sexo F = " << deCSV->getPorcentagemSexoF() << std::endl
         << std::endl;
 
 
@@ -29,7 +29,7 @@ int main() {
         << "Media Altura = " << deJSON->getMediaAltura() << std::endl
         << "Media Peso = " << deJSON->getMediaPeso() << std::endl
         << "Porcentagem Sexo M = " << deJSON->getPorcentagemSexoM() << std::endl
-        << "Porncetagem Sexo F = " << deJSON->getPorcentagemSexoF() << std::endl
+        << "Porcentagem Sexo F = " << deJSON->getPorcentagemSexoF() << std::endl
         << std::endl;
 
 
