@@ -11,6 +11,7 @@ class DadosEstatisticos {
             const float porcentagemSexoM,
             const float porcentagemSexoF
         );
+        virtual ~DadosEstatisticos() = default;
 
         float getNumTotalDados() const;
         float getMediaIdade() const;

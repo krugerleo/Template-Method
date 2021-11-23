@@ -9,6 +9,8 @@
 
 class ExtrairEstatisticas {
     public:
+        virtual ~ExtrairEstatisticas() = default;
+
         /* Template method - Método Template*/
         DadosEstatisticos* obterDadosEstatisticos(const std::string& nomeArq) const;
 

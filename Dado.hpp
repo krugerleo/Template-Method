@@ -12,6 +12,7 @@ class Dado {
             const float peso,
             const char sexo
         );
+        virtual ~Dado() = default;
 
         std::string getNome() const;
         int getIdade() const;

@@ -7,6 +7,9 @@
 #include "ExtrairEstatisticas.hpp"
 
 class ExtrairEstatisticasCSV: public ExtrairEstatisticas {
+    public:
+        virtual ~ExtrairEstatisticasCSV() = default;
+
     protected:
         std::vector<Dado*> converterParaClasseDado(std::ifstream& arq) const override;
 };

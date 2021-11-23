@@ -1,5 +1,6 @@
 #include <stdexcept>
 #include "ExtrairEstatisticasJSON.hpp"
+#include "bibliotecas/json.hpp"
 
 std::vector<Dado*> ExtrairEstatisticasJSON::converterParaClasseDado(std::ifstream& arq) const {
     std::vector<Dado*> dados;
@@ -10,7 +11,7 @@ std::vector<Dado*> ExtrairEstatisticasJSON::converterParaClasseDado(std::ifstrea
     for (; it != arqJson.end(); it++) {
         dados.push_back(new Dado{
                 (*it)["nome"].get<std::string>(),
-                (*it)["idade"].get<float>(),
+                (*it)["idade"].get<int>(),
                 (*it)["altura"].get<float>(),
                 (*it)["peso"].get<float>(),
                 (*it)["sexo"].get<std::string>()[0]

@@ -9,6 +9,7 @@
 class LeitorDadosEstatisticosArq {
     public:
         LeitorDadosEstatisticosArq(ExtrairEstatisticas* ee);
+        virtual ~LeitorDadosEstatisticosArq() = default;
 
         void imprimirDadosEstatisticos(const std::string nomeArq) const;
     private:
