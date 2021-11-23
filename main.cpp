@@ -1,5 +1,6 @@
 #include <iostream>
 #include "LeitorDadosEstatisticosArq.hpp"
+#include "ExtrairEstatisticas.hpp"
 #include "ExtrairEstatisticasCSV.hpp"
 #include "ExtrairEstatisticasJSON.hpp"
 #include "DadosEstatisticos.hpp"

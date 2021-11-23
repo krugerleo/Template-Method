@@ -8,24 +8,9 @@
 
 class LeitorDadosEstatisticosArq {
     public:
-        LeitorDadosEstatisticosArq(ExtrairEstatisticas* ee)
-            :ee(ee){}
+        LeitorDadosEstatisticosArq(ExtrairEstatisticas* ee);
 
-        void imprimirDadosEstatisticos(const std::string nomeArq) {
-
-            DadosEstatisticos* de{ee->obterDadosEstatisticos(nomeArq)};
-
-            std::cout
-                << "Numero Total de Dados = " << de->getNumTotalDados() << std::endl
-                << "Media Idade = " << de->getMediaIdade() << std::endl
-                << "Media Altura = " << de->getMediaAltura() << std::endl
-                << "Media Peso = " << de->getMediaPesoa() << std::endl
-                << "Porcentagem Sexo M = " << de->getPorcentagemSexoM() << std::endl
-                << "Porncetagem Sexo F = " << de->getPorcentagemSexoF() << std::endl
-                << std::endl;
-
-            delete de;
-        }
+        void imprimirDadosEstatisticos(const std::string nomeArq) const;
     private:
         ExtrairEstatisticas* ee;
 };
