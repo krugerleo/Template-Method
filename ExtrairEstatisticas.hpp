@@ -13,7 +13,7 @@ class ExtrairEstatisticas {
         DadosEstatisticos* obterDadosEstatisticos(const std::string& nomeArq) const;
 
     protected:
-        /* Operação concreta */
+        /* Operação gancho (hook operation) */
         virtual bool checarArquivo(const std::string& nomeArq) const;
 
         /* Operação concreta */
@@ -25,7 +25,7 @@ class ExtrairEstatisticas {
         /* Operação concreta */
         DadosEstatisticos* processarDados(const std::vector<Dado*>& dados) const;
 
-        /* Operação gancho (hook operation) */
+        /* Operação concreta */
         virtual void fecharArquivo(std::ifstream& arq) const;
 
         /* Operação concreta */
