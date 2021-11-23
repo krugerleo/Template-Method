@@ -11,7 +11,7 @@ class ExtrairEstatisticasCSV: public ExtrairEstatisticas {
         virtual ~ExtrairEstatisticasCSV() = default;
 
     protected:
-        std::vector<Dado*> converterParaClasseDado(std::ifstream& arq) const override;
+        virtual std::vector<Dado*> converterParaClasseDado(std::ifstream& arq) const override;
 };
 
 #endif

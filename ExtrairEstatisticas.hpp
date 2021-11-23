@@ -25,13 +25,13 @@ class ExtrairEstatisticas {
         virtual std::vector<Dado*> converterParaClasseDado(std::ifstream& arq) const = 0;
 
         /* Operação concreta */
-        DadosEstatisticos* processarDados(const std::vector<Dado*>& dados) const;
+        virtual DadosEstatisticos* processarDados(const std::vector<Dado*>& dados) const;
 
         /* Operação concreta */
         virtual void fecharArquivo(std::ifstream& arq) const;
 
         /* Operação concreta */
-        void limparDados(std::vector<Dado*>& dados) const;
+        virtual void limparDados(std::vector<Dado*>& dados) const;
 };
 
 #endif

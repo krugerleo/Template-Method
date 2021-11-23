@@ -12,8 +12,8 @@ class ExtrairEstatisticasJSON: public ExtrairEstatisticas {
         virtual ~ExtrairEstatisticasJSON() = default;
 
     protected:
-        std::vector<Dado*> converterParaClasseDado(std::ifstream& arq) const override;
-        bool checarArquivo(const std::string& nomeArq) const override;
+        virtual std::vector<Dado*> converterParaClasseDado(std::ifstream& arq) const override;
+        virtual bool checarArquivo(const std::string& nomeArq) const override;
 };
 
 #endif
